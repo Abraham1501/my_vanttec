@@ -67,9 +67,6 @@ public:
   )
   {
     double dt_imu = current_time_imu - previous_time_imu_;
-    //std::cout << "1> " <<dt_imu <<std::endl;
-    //std::cout << "2> " <<current_time_imu <<std::endl;
-    //std::cout << "3> " <<previous_time_imu_ <<std::endl;
     previous_time_imu_ = current_time_imu;
     if (dt_imu > 0.5 /* [sec] */) {
       std::cout << "imu time interval is too large" << std::endl;

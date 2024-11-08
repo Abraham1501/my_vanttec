@@ -145,7 +145,7 @@ Vectornav::Vectornav(const rclcpp::NodeOptions & options) : Node("vectornav", op
   /// GPS Compass Baseline (8.2.3)
 
   // Message Header
-  declare_parameter<std::string>("frame_id", "vectornav"); //declare_parameter<std::string>("frame_id", "map");
+  declare_parameter<std::string>("frame_id", "vectornav");
 
   // Composite Data Publisher
   pub_common_ =
@@ -788,6 +788,7 @@ void Vectornav::parseCommonGroup(
   msg.header.stamp = timestamp;
   msg.header.frame_id = "imu_link";//msg.header.frame_id = node->get_parameter("frame_id").as_string();
 
+
   // Group Fields
   msg.group_fields = groupFields;
 
@@ -951,7 +952,7 @@ void Vectornav::parseImuGroup(
   auto msg = vectornav_msgs::msg::ImuGroup();
   // Header
   msg.header.stamp = timestamp;
-  msg.header.frame_id = "imu_link";
+    msg.header.frame_id = "imu_link";
   //msg.header.frame_id = node->get_parameter("frame_id").as_string();
 
   // Group Fields
@@ -1026,6 +1027,7 @@ void Vectornav::parseGpsGroup(
   // Header
   msg.header.stamp = timestamp;
   msg.header.frame_id = "imu_link";//msg.header.frame_id = node->get_parameter("frame_id").as_string();
+
 
   // Group Fields
   msg.group_fields = groupFields;
@@ -1106,6 +1108,7 @@ void Vectornav::parseAttitudeGroup(
   // Header
   msg.header.stamp = timestamp;
   msg.header.frame_id = "imu_link";//msg.header.frame_id = node->get_parameter("frame_id").as_string();
+
 
   // Group Fields
   msg.group_fields = groupFields;

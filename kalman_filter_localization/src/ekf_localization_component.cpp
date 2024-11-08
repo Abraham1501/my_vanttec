@@ -102,6 +102,7 @@ EkfLocalizationComponent::EkfLocalizationComponent(const rclcpp::NodeOptions & o
       x(STATE::QW) = current_pose_.pose.orientation.w;
       ekf_.setInitialX(x);
     };
+
   auto imu_callback =
     [this](const typename sensor_msgs::msg::Imu::SharedPtr msg) -> void
     {

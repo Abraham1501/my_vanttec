@@ -46,7 +46,7 @@ VnSensorMsgs::VnSensorMsgs(const rclcpp::NodeOptions & options) : Node("vn_senso
   pub_time_syncin_ =
     this->create_publisher<sensor_msgs::msg::TimeReference>("vectornav/time_syncin", 10);
   pub_time_pps_ = this->create_publisher<sensor_msgs::msg::TimeReference>("vectornav/time_pps", 10);
-  pub_imu_ = this->create_publisher<sensor_msgs::msg::Imu>("vectornav/imu", 5);
+  pub_imu_ = this->create_publisher<sensor_msgs::msg::Imu>("vectornav/imu", 10);
   pub_gnss_ = this->create_publisher<sensor_msgs::msg::NavSatFix>("vectornav/gnss", 10);
   pub_imu_uncompensated_ =
     this->create_publisher<sensor_msgs::msg::Imu>("vectornav/imu_uncompensated", 10);
