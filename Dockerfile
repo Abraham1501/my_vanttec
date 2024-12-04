@@ -36,7 +36,7 @@ RUN apt-get update \
 
 # Download boost, untar, setup install with bootstrap and only do the Program Options library,
 # and then install
-RUN cd /home && wget http://downloads.sourceforge.net/project/boost/boost/1.74.0/boost_1_74_0.tar.gz \
+RUN cd /home && wget https://downloads.sourceforge.net/project/boost/boost/1.74.0/boost_1_74_0.tar.gz \
   && tar xfz boost_1_74_0.tar.gz \
   && rm boost_1_74_0.tar.gz \
   && cd boost_1_74_0 \
